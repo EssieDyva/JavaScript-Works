@@ -9,6 +9,7 @@ function testApi() {
 
     // URL della richiesta API per ottenere i dati della Germania
     const requestUrl = "https://restcountries.com/v3.1/name/deutschland";
+
     xhr.open("GET", requestUrl, true);
     xhr.onload = function () {
         // Mostra la risposta della richiesta nella console
@@ -40,6 +41,6 @@ function addOption() {
         let option = document.createElement("option");
         option.value = confini[i];
         option.innerHTML = confini[i];
-        select.appendChild(option);
+        select.add(option);
     }
 }
