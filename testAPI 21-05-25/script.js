@@ -14,10 +14,11 @@ function testApi() {
     xhr.onload = function () {
         // Mostra la risposta della richiesta nella console
         console.log(xhr.responseText);
-        // Effettua il parsing della risposta JSON
-        data = JSON.parse(xhr.responseText);
         // Mostra la risposta nel div con id "result"
         document.getElementById("result").textContent = xhr.responseText;
+        
+        // Effettua il parsing della risposta JSON
+        data = JSON.parse(xhr.responseText);
         // Inserisce i confini nell'array confini
         if (data[0] && data[0].borders) {
             confini = data[0].borders; // (contiene solo i confini)
