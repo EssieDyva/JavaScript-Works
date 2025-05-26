@@ -14,14 +14,12 @@ function testApi() {
 
         // Effettua il parsing della risposta JSON
         let data = JSON.parse(xhr.responseText);
-        let confini = [];
+
         // Inserisce i confini nell'array confini
-        if (data[0] && data[0].borders) {
-            confini = data[0].borders; // (contiene solo i confini)
-        } else {
+        if (data[0].borders == undefined) {
             console.error("Borders data is not available in the API response.");
-        }
-        addOption(confini); // Aggiunge le opzioni alla select
+        } 
+        addOption(data[0].borders); // Aggiunge le opzioni alla select
     };
     xhr.send();
 }
